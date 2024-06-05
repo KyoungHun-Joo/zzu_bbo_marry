@@ -1,7 +1,7 @@
 {
   "name": "wedding-card",
   "version": "0.1.0",
-  "homepage": "https://kyounghun-joo.github.io/nextjs-wedding-invite/",
+  "homepage": "https://kyounghun-joo.github.io/zzu_bbo_marry",
   "scripts": {
     "start:dev": "nodemon",
     "deploy": " touch out/.nojekyll && gh-pages -d out",
