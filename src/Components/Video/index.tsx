@@ -54,10 +54,10 @@ export const Video: React.FunctionComponent<any> = ({ mode }) => {
     <>
       <section id="coming_soon" className="coming_soon_area pt-20 pb-70">
         <video ref={videoRef} width="100%" height="100%" style={{ display: "none" }} controls>
-          <source src="/static/video/marry.mp4" type="video/mp4" />
+          <source src="/zzu_bbo_marry/static/video/marry.mp4" type="video/mp4" />
         </video>
         <div className="coming_soon_shape_1" style={{ zIndex: 1 }}>
-          <img src="/static/images/shape-1.png" alt="shape" />
+          <img src="/zzu_bbo_marry/static/images/shape-1.png" alt="shape" />
         </div>
         <div className="container">
           <div className="row align-items-center">
@@ -77,7 +77,7 @@ export const Video: React.FunctionComponent<any> = ({ mode }) => {
                 <h3 className="title">P커플 퀴즈쇼</h3>
                 {/* <p>새로운 시작</p> */}
 
-                <img src="/static/images/section_shape.png" alt="Shape" />
+                <img src="/zzu_bbo_marry/static/images/section_shape.png" alt="Shape" />
               </div>
             </div>
             <div
@@ -149,7 +149,7 @@ export const Video: React.FunctionComponent<any> = ({ mode }) => {
           </div>
         </div>
         <div className="coming_soon_shape_2">
-          <img src="/static/images/shape-2.png" alt="shape" />
+          <img src="/zzu_bbo_marry/static/images/shape-2.png" alt="shape" />
         </div>
       </section>
     </>

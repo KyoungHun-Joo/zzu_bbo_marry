@@ -11,7 +11,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
     <>
       <section id="coming_soon" className="coming_soon_area pt-20 pb-70">
         <div className="coming_soon_shape_1" style={{ zIndex: 1 }}>
-          <img src="/static/images/shape-1.png" alt="shape" />
+          <img src="/zzu_bbo_marry/static/images/shape-1.png" alt="shape" />
         </div>
         <div className="container">
           <div className="row align-items-center">
@@ -31,7 +31,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                 <h3 className="title">초대장</h3>
                 {/* <p>새로운 시작</p> */}
 
-                <img src="/static/images/section_shape.png" alt="Shape" />
+                <img src="/zzu_bbo_marry/static/images/section_shape.png" alt="Shape" />
               </div>
             </div>
             <div
@@ -120,7 +120,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
           </div>
         </div>
         <div className="coming_soon_shape_2">
-          <img src="/static/images/shape-2.png" alt="shape" />
+          <img src="/zzu_bbo_marry/static/images/shape-2.png" alt="shape" />
         </div>
       </section>
     </>
