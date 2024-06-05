@@ -100,12 +100,12 @@ body {
   height: 100%;
   z-index: -1;
   filter: blur(3px);
-  background-image: url("/static/images/photo/topBanner.jpeg");
+  background-image: url("/zzu_bbo_marry/static/images/photo/topBanner.jpeg");
   background-size: cover;
   background-position: center;
 }
 .hero.party::before {
-  background-image: url("/static/images/party/banner1.jpeg") !important;
+  background-image: url("/zzu_bbo_marry/static/images/party/banner1.jpeg") !important;
 }
 .heroMain {
   position: relative;
