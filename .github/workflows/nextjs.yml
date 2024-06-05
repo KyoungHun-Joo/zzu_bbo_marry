@@ -53,6 +53,7 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Setup Pages
@@ -65,7 +66,7 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} NODE_OPTIONS=--openssl-legacy-provider next build && tsc --project tsconfig.server.json
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
