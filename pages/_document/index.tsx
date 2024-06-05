@@ -39,7 +39,7 @@ class WebAppDocument extends Document {
           <div id="modal-root" />
           <NextScript />
         </body>
-        <script src="/static/js/script.js?v=1234567890" async />
+        <script src="/zzu_bbo_marry/static/js/script.js?v=12345" async />
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" async />
       </Html>
