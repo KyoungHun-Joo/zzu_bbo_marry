@@ -54,7 +54,7 @@ export const Video: React.FunctionComponent<any> = ({ mode }) => {
     <>
       <section id="coming_soon" className="coming_soon_area pt-20 pb-70">
         <video ref={videoRef} width="100%" height="100%" style={{ display: "none" }} controls>
-          <source src="https://kyounghun-joo.github.io/zzu_bbo_marry/static/video/marry.mp4" type="video/mp4" />
+          <source src="https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/marry.mp4" type="video/mp4" />
         </video>
         <div className="coming_soon_shape_1" style={{ zIndex: 1 }}>
           <img src="/zzu_bbo_marry/static/images/shape-1.png" alt="shape" />
