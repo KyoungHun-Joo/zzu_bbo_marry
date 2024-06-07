@@ -33,7 +33,14 @@ class WebAppDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta property="og:title" content="주경훈/한보라 모바일 청접장" />
+          <meta property="og:description" content="새로운 시작을 함계 해주세요!" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="/zzu_bbo_marry/static/images/photo/topBanner.jpeg" />
+          <meta property="og:locale" content="ko_KR" />
+          <meta property="og:site_name" content="쭈뽀" />
+        </Head>
         <body>
           <Main />
           <div id="modal-root" />
