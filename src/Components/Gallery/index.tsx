@@ -46,7 +46,6 @@ const handleClick = (e: any, path: any) => {
 };
 
 export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
-  console.log("gallery mode", mode);
   const modalHandler = () => {
     setOpen((prev) => !prev);
   };

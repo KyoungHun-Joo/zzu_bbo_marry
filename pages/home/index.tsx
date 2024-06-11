@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import { Container, Top, TopText, Middle, MiddleLeft, MiddleLeftButtons, MiddleRight, Apod, ApodButton } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
-import { Heading, LocaleButton, Float, Navbar, Section1, Section2, SectionCall, Gallery, GalleryHover, Footer, MapSection, Video } from "@Components";
+import { Heading, LocaleButton, Float, Navbar, Section1, Section2, SectionCall, Gallery, GalleryHover, Footer, MapSection, Quiz } from "@Components";
 // #endregion Local Imports
 import { useState } from "react";
 
@@ -21,9 +21,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
   const [mode, setMode] = useState("1");
   const [isServer, setIsServer] = useState(true);
 
-  console.log("home open", open);
-  console.log("mode", mode);
-
   const removeModal = () => {
     if (open) setOpen(false);
   };
@@ -35,7 +32,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
       <>
         {mode === "quiz" ? (
           <>
-            <Video></Video>
+            <Quiz></Quiz>
           </>
         ) : (
           <>

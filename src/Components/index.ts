@@ -12,3 +12,4 @@ export { MapSection } from "@Components/MapSection";
 export { Gallery } from "@Components/Gallery";
 export { GalleryHover } from "@Components/GalleryHover";
 export { Video } from "@Components/Video";
+export { Quiz } from "@Components/Quiz";
