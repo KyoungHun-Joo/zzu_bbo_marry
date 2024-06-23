@@ -13,8 +13,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
 
   console.log("quiz load");
   const handleSecret = async () => {
-    console.log("handle secret load");
-
     const res = await fetch(`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`, {
       method: "GET",
       headers: {
@@ -22,10 +20,9 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       },
     });
 
-    console.log("handle secret data.status");
-
     if (res.status == 200) {
       console.log(" is valid ");
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setIsValid(true);
       console.log("test1");
       const Video = dynamic(() => import("../Video").then((mod) => mod.Video), {
@@ -59,11 +56,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   };
 
   const handleSubmit = () => {
-    if (!load) {
-      handleSecret();
-      load = true;
-    }
-
     if (selectedOption === questions[currentQuestion].answer) {
       setScore(score + 1);
     }
@@ -74,6 +66,10 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       setSelectedOption("");
     } else {
       setShowScore(true);
+    }
+    if (!load) {
+      handleSecret();
+      load = true;
     }
   };
 
