@@ -22,6 +22,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     const data = await res.json();
 
     if (data.status == 200) {
+      console.log(" is valid ");
       setIsValid(true);
       console.log("test1");
       const Video = dynamic(() => import("../Video").then((mod) => mod.Video), {
@@ -55,6 +56,11 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   };
 
   const handleSubmit = () => {
+    if (!load) {
+      handleSecret();
+      load = true;
+    }
+
     if (selectedOption === questions[currentQuestion].answer) {
       setScore(score + 1);
     }
@@ -67,11 +73,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       setShowScore(true);
     }
   };
-
-  if (!load) {
-    handleSecret();
-    load = true;
-  }
 
   return (
     <>
