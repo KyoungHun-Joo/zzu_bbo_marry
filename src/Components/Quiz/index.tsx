@@ -22,6 +22,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       },
     });
 
+    console.log("res", res);
     const data = await res.json();
     console.log("handle secret data.status", data.status);
 
