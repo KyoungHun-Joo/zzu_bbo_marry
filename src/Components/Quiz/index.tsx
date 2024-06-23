@@ -22,11 +22,9 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       },
     });
 
-    console.log("res", res);
-    const data = await res.json();
-    console.log("handle secret data.status", data.status);
+    console.log("handle secret data.status");
 
-    if (data.status == 200) {
+    if (res.status == 200) {
       console.log(" is valid ");
       setIsValid(true);
       console.log("test1");
