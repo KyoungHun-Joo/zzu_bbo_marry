@@ -7,12 +7,12 @@ import { useRouter } from "next/router";
 let load = false;
 export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const [isValid, setIsValid] = useState(false);
-  const [Component, setComponent] = useState<React.ComponentType | null>(null);
+  const [Component, setComponent] = useState<React.ComponentType<{ source: string }> | null>(null);
   const router = useRouter();
   const { query } = router;
 
   const handleSecret = async () => {
-    const res = await fetch("/api/verify?secret=" + query.secret, {
+    const res = await fetch(`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
 
     const data = await res.json();
 
-    if (data.secret) {
+    if (data.status == 200) {
       setIsValid(true);
       console.log("test1");
       const Video = dynamic(() => import("../Video").then((mod) => mod.Video), {
@@ -78,7 +78,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       <section id="coming_soon" className="coming_soon_area pt-20 pb-70">
         {isValid && Component ? (
           <>
-            <Component />
+            <Component source={`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`} />
           </>
         ) : (
           <>
