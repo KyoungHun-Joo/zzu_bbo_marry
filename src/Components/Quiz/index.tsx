@@ -11,7 +11,10 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const router = useRouter();
   const { query } = router;
 
+  console.log("quiz load");
   const handleSecret = async () => {
+    console.log("handle secret load");
+
     const res = await fetch(`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`, {
       method: "GET",
       headers: {
@@ -20,6 +23,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     });
 
     const data = await res.json();
+    console.log("handle secret data.status", data.status);
 
     if (data.status == 200) {
       console.log(" is valid ");
