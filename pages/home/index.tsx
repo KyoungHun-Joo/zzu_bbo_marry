@@ -22,12 +22,14 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
   const [isServer, setIsServer] = useState(true);
 
   const removeModal = () => {
+    console.log("remove modal call open : ", mode, open);
     if (open) setOpen(false);
   };
 
   return (
-    <Container onClick={() => removeModal()}>
+    <Container>
       <Section1 mode={mode} />
+      <Float mode={mode} />
 
       <>
         {mode === "quiz" ? (
@@ -36,12 +38,11 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
           </>
         ) : (
           <>
-            <Float mode={mode} />
             <Section2 mode={mode} />
             <Gallery mode={mode} setOpen={setOpen} />
             <SectionCall />
             <MapSection />
-            <GalleryHover mode={mode} isOpen={open} setOpen={setOpen} />
+            <GalleryHover mode={mode} isOpen={open} setOpen={setOpen} removeModal={removeModal} />
           </>
         )}
       </>

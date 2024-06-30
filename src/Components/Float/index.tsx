@@ -19,7 +19,15 @@ export const Float: React.FunctionComponent<any> = ({ mode }) => {
 
   return (
     <>
-      {mode === "1" ? (
+      {mode === "party" ? (
+        <>
+          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/bora1.png?v=1234567890" width="15%" />
+          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/bora2.png?v=1234567890" width="25%" />
+          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/joo1.png?v=1234567890" width="15%" />
+          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/together1.png?v=1234567890" width="25%" />
+          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/together2.png?v=1234567890" width="25%" />
+        </>
+      ) : (
         <>
           <FloatItem $imageUrl="/zzu_bbo_marry/static/images/floral-leaf/floral-leaf-1.png?v=1234567890" />
           <FloatItem $imageUrl="/zzu_bbo_marry/static/images/floral-leaf/floral-leaf-2.png?v=1234567890" />
@@ -27,14 +35,6 @@ export const Float: React.FunctionComponent<any> = ({ mode }) => {
           <FloatItem $imageUrl="/zzu_bbo_marry/static/images/floral-leaf/floral-leaf-4.png?v=1234567890" />
           <FloatItem $imageUrl="/zzu_bbo_marry/static/images/floral-leaf/floral-leaf-5.png?v=1234567890" />
           <FloatItem $imageUrl="/zzu_bbo_marry/static/images/floral-leaf/floral-leaf-6.png?v=1234567890" />
-        </>
-      ) : (
-        <>
-          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/bora1.png?v=1234567890" width="15%" />
-          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/bora2.png?v=1234567890" width="25%" />
-          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/joo1.png?v=1234567890" width="15%" />
-          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/together1.png?v=1234567890" width="25%" />
-          <FloatItem $imageUrl="/zzu_bbo_marry/static/images/party/together2.png?v=1234567890" width="25%" />
         </>
       )}
     </>

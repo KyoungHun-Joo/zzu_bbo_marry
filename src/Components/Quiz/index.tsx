@@ -3,8 +3,150 @@ import React, { ChangeEvent } from "react";
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import styled, { css } from "styled-components";
 
 let load = false;
+
+// Styled Components
+const QuizContainer = styled.div`
+  text-align: center;
+  padding: 20px;
+`;
+
+const QuestionContainer = styled.div`
+  margin-bottom: 20px;
+`;
+
+const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Option = styled.label<{ isCorrect?: boolean; isWrong?: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  ${({ isCorrect }) =>
+    isCorrect &&
+    css`
+      background-color: blue;
+      border-color: blue;
+      color: white;
+    `}
+
+  ${({ isWrong }) =>
+    isWrong &&
+    css`
+      background-color: red;
+      border-color: red;
+      color: white;
+    `}
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  input {
+    display: none;
+  }
+
+  span {
+    flex-grow: 1;
+    text-align: left;
+  }
+`;
+
+const SubmitButton = styled.button`
+  background-color: sienna;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const BackButton = styled.button`
+  background-color: gray;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #404040;
+  }
+`;
+
+const RestartButton = styled.button`
+  background-color: green;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darkgreen;
+  }
+`;
+
+const ScoreContainer = styled.div`
+  font-size: 1.5rem;
+  color: green;
+`;
+
+const QuizTitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+`;
+
+const SectionTitle = styled.h3`
+  font-size: 2rem;
+  color: #333;
+`;
+
+const AnswerReview = styled.p<{ isCorrect?: boolean; isWrong?: boolean }>`
+  font-size: 1.2rem;
+  ${({ isCorrect }) =>
+    isCorrect &&
+    css`
+      color: blue;
+    `}
+  ${({ isWrong }) =>
+    isWrong &&
+    css`
+      color: red;
+    `}
+`;
+
 export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const [isValid, setIsValid] = useState(false);
   const [Component, setComponent] = useState<React.ComponentType<{ source: string }> | null>(null);
@@ -13,6 +155,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
 
   console.log("quiz load");
   const handleSecret = async () => {
+    if (!("secret" in query)) return;
     const res = await fetch(`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`, {
       method: "GET",
       headers: {
@@ -32,11 +175,12 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       setComponent(Video);
     }
   };
+
   const questions = [
     {
       question: "두 사람이 처음 만난 장소는?",
-      options: ["클럽", "회사", "술집", "카페"],
-      answer: "술집",
+      options: ["클럽", "회사", "이자카야", "카페"],
+      answer: "이자카야",
     },
     {
       question: "두 사람의 신혼 여행 장소는?",
@@ -50,27 +194,99 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [onceCheck, setOnceCheck] = useState(false);
+
+  const [highlightedOption, setHighlightedOption] = useState<{ correct?: string; wrong?: string }>({});
+  const [userAnswers, setUserAnswers] = useState<string[]>([]);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
   const handleSubmit = () => {
+    const updatedUserAnswers = [...userAnswers];
+    updatedUserAnswers[currentQuestion] = selectedOption;
+    setUserAnswers(updatedUserAnswers);
+
     if (selectedOption === questions[currentQuestion].answer) {
-      setScore(score + 1);
+      setHighlightedOption({ correct: selectedOption });
+      setTimeout(() => {
+        goToNextQuestion();
+      }, 500);
+    } else {
+      setHighlightedOption({ correct: questions[currentQuestion].answer, wrong: selectedOption });
+      setTimeout(() => {
+        goToNextQuestion();
+      }, 500);
     }
 
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-      setSelectedOption("");
-    } else {
-      setShowScore(true);
-    }
     if (!load) {
       handleSecret();
       load = true;
     }
+  };
+
+  const goToNextQuestion = () => {
+    const nextQuestion = currentQuestion + 1;
+    setCurrentQuestion(nextQuestion);
+
+    if (nextQuestion < questions.length) {
+      setSelectedOption(userAnswers[nextQuestion] || "");
+      setHighlightedOption({
+        correct: questions[nextQuestion].answer,
+        wrong: userAnswers[nextQuestion] !== questions[nextQuestion].answer ? userAnswers[nextQuestion] : undefined,
+      });
+    } else {
+      let finalScore = 0;
+      for (let i = 0; i < questions.length; i++) {
+        console.log("i ", i, userAnswers[i], questions[i].answer);
+        if (userAnswers[i] === questions[i].answer) {
+          finalScore++;
+        }
+      }
+
+      setScore(finalScore);
+
+      setShowScore(true);
+      setOnceCheck(true);
+    }
+  };
+
+  const goToPreviousQuestion = () => {
+    if (currentQuestion > 0 && !onceCheck) {
+      const goQuestion = currentQuestion - 1;
+      console.log("currentQuestion", currentQuestion, onceCheck, goQuestion);
+
+      setSelectedOption(userAnswers[goQuestion] || "");
+      setHighlightedOption({
+        correct: questions[goQuestion].answer,
+        wrong: userAnswers[goQuestion] !== questions[goQuestion].answer ? userAnswers[goQuestion] : undefined,
+      });
+      setShowScore(false);
+    }
+
+    if (onceCheck) {
+      console.log("currentQuestion onceCheck", currentQuestion, questions.length);
+      const goQuestion = currentQuestion - 1;
+
+      setSelectedOption(userAnswers[goQuestion] || "");
+      setCurrentQuestion(goQuestion);
+
+      setHighlightedOption({
+        correct: questions[goQuestion].answer,
+        wrong: userAnswers[goQuestion] !== questions[goQuestion].answer ? userAnswers[goQuestion] : undefined,
+      });
+      setShowScore(false);
+    }
+  };
+
+  const restartQuiz = () => {
+    setCurrentQuestion(0);
+    setSelectedOption("");
+    setScore(0);
+    setShowScore(false);
+    setUserAnswers([]);
+    setHighlightedOption({});
   };
 
   return (
@@ -100,9 +316,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
                       textAlign: "center",
                     }}
                   >
-                    <h3 className="title">P커플 퀴즈쇼</h3>
-                    {/* <p>새로운 시작</p> */}
-
+                    <SectionTitle>P커플 퀴즈쇼</SectionTitle>
                     <img src="/zzu_bbo_marry/static/images/section_shape.png" alt="Shape" />
                   </div>
                 </div>
@@ -132,41 +346,34 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
                             margin: "auto",
                           }}
                         >
-                          <p
-                            style={{
-                              fontSize: "1.7rem",
-                              lineHeight: "inherit",
-                              color: "dimgrey",
-                              textAlign: "center",
-                            }}
-                          >
+                          <QuizContainer>
                             {showScore ? (
-                              <div>
+                              <ScoreContainer>
                                 <h2>퀴즈 완료!</h2>
                                 <p>당신의 점수는 {score}점 입니다.</p>
-                              </div>
+                                <div>
+                                  <BackButton onClick={goToPreviousQuestion}>이전</BackButton>
+                                  <RestartButton onClick={restartQuiz}>다시 풀기</RestartButton>
+                                </div>
+                              </ScoreContainer>
                             ) : (
                               <div>
-                                <h2>{questions[currentQuestion].question}</h2>
-                                <br />
-                                <br />
-                                {questions[currentQuestion].options.map((option) => (
-                                  <div key={option}>
-                                    <strong>
+                                <QuizTitle>{questions[currentQuestion].question}</QuizTitle>
+                                <OptionsContainer>
+                                  {questions[currentQuestion].options.map((option) => (
+                                    <Option key={option} isCorrect={highlightedOption.correct === option} isWrong={highlightedOption.wrong === option}>
                                       <input type="radio" value={option} checked={selectedOption === option} onChange={handleOptionChange} />
-                                      {option}
-                                    </strong>
-                                  </div>
-                                ))}
-                                <br />
-
-                                <button onClick={handleSubmit}>제출</button>
+                                      <span>{option}</span>
+                                    </Option>
+                                  ))}
+                                </OptionsContainer>
+                                <div>
+                                  {currentQuestion > 0 && <BackButton onClick={goToPreviousQuestion}>이전</BackButton>}
+                                  <SubmitButton onClick={handleSubmit}>제출</SubmitButton>
+                                </div>
                               </div>
                             )}
-                            <br />
-                            <br />
-                            <br />
-                          </p>
+                          </QuizContainer>
                         </div>
                       </div>
                     </div>
