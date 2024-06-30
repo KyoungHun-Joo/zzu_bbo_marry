@@ -32,8 +32,11 @@ export const SectionCall: React.FunctionComponent<any> = () => {
           <div className="footer_title">
             <h5 className="title">
               신랑한테 연락하기
-              <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+              <a href="tel:01072857889">
+                <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+              </a>
             </h5>
+            <br />
             <br />
             <h5 className="title">
               신부한테 연락하기
@@ -48,13 +51,15 @@ export const SectionCall: React.FunctionComponent<any> = () => {
             <div className="title">신랑 측 혼주</div>
             <div className="box first">
               <div className="name">
-                <span>아버지</span> <strong>주창선</strong>
+                <span style={{ verticalAlign: "middle" }}>아버지</span>
+                <strong style={{ verticalAlign: "middle" }}>주창선</strong>
                 <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
               </div>
             </div>
             <div className="box">
               <div className="name">
-                <span>어머니</span> <strong>이화실</strong>
+                <span style={{ verticalAlign: "middle" }}>어머니</span>
+                <strong style={{ verticalAlign: "middle" }}>이화실</strong>
                 <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
               </div>
             </div>
@@ -63,13 +68,13 @@ export const SectionCall: React.FunctionComponent<any> = () => {
             <div className="title ">신부 측 혼주</div>
             <div className="box first">
               <div className="name">
-                <span>아버지</span> <strong>한사홍</strong>
+                <span style={{ verticalAlign: "middle" }}>아버지</span> <strong style={{ verticalAlign: "middle" }}>한사홍</strong>
                 <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
               </div>
             </div>
             <div className="box">
               <div className="name">
-                <span>어머니</span> <strong>심재선</strong>
+                <span style={{ verticalAlign: "middle" }}>어머니</span> <strong style={{ verticalAlign: "middle" }}>심재선</strong>
                 <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
               </div>
             </div>

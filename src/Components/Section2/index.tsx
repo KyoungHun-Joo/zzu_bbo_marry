@@ -70,13 +70,24 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                       >
                         {mode === "1" ? (
                           <i>
-                            내가 그의 이름을 불러 주기 전에는 그는 다만 하나의 몸짓에 지나지 않았다.
+                            내가 그의 이름을 불러 주기 전에는
+                            <br />
+                            그는 다만 하나의 몸짓에 지나지 않았다.
                             <br />
                             <br />
-                            내가 그의 이름을 불러 주었을 때 그는 나에게로 와서 꽃이 되었다.
+                            내가 그의 이름을 불러 주었을 때
+                            <br />
+                            그는 나에게로 와서 꽃이 되었다.
                             <br />
                             <br />
-                            서로가 마주보며 다져온 사랑을 이제 함께 한 곳을 바라보며 걸어갈 수 있는 큰 사랑으로 키우고자 합니다. 저희 두 사람이 사랑의 이름으로 지켜나갈 수 있도록
+                            서로가 마주보며 다져온 사랑을 이제
+                            <br />
+                            함께 한 곳을 바라보며 걸어갈 수 있는
+                            <br />큰 사랑으로 키우고자 합니다.
+                            <br />
+                            <br />
+                            저희 두 사람이 사랑의 이름으로 지켜나갈 수 있도록
+                            <br />
                             앞날을 축복해 주시면 감사하겠습니다.
                             <br />
                             <br />
@@ -85,16 +96,26 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                           </i>
                         ) : (
                           <i>
-                            첫번쨰 소개팅 자리 이후 두번째 만남에 고백을 하여 사랑을 쟁취한 상남자
+                            첫번쨰 소개팅 자리 이후 두번째 만남에
                             <br />
-                            고백은 받아주었지만 아직 마음을 다 준건 아니니 거리를 두던 쳘벽녀
+                            고백을 하여 사랑을 쟁취한 상남자
+                            <br />
+                            고백은 받아주었지만 아직 마음을 다 준건
+                            <br />
+                            아니니 거리를 두던 쳘벽녀
                             <br />
                             <br />
-                            두 사람은 어떤 상황과 위기에서도 늘 서로의 웃음이 되어주며 극 P 커플이 되었습니다
+                            두 사람은 어떤 상황과 위기에서도 늘
+                            <br />
+                            서로의 웃음이 되어주며 극 P 커플이 되었습니다
                             <br />
                             <br />
-                            서로가 마주보며 다져온 사랑을 이제 함께 한 곳을 바라보며 걸어갈 수 있는 큰 사랑으로 키우고자 합니다. 저희 두 사람이 사랑의 이름으로 지켜나갈 수 있도록
-                            앞날을 축복해 주시면 감사하겠습니다.
+                            서로가 마주보며 다져온 사랑을 이제 함께 한 곳을
+                            <br />
+                            바라보며 걸어갈 수 있는 큰 사랑으로 키우고자 합니다.
+                            <br />
+                            <br />
+                            저희 두 사람이 사랑의 이름으로 지켜나갈 수 있도록 앞날을 축복해 주시면 감사하겠습니다.
                             <br />
                             <br />
                             <br />
@@ -106,12 +127,12 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
 
                     <p className="text">
                       <br />
-                      <strong style={{ fontSize: "3rem" }}>{mode === "1" ? "주창선 이화실" : "한보라"}</strong> 의 {mode === "1" ? "장남" : "남자"}{" "}
-                      <strong style={{ fontSize: "3rem" }}>경훈</strong>
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" ? "주창선 이화실" : "한보라"}</strong> 의 {mode === "1" ? "장남" : "남자"}{" "}
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>경훈</strong>
                       <br />
                       <br />
-                      <strong style={{ fontSize: "3rem" }}>{mode === "1" ? "한사홍 심재선" : "주경훈"}</strong> 의 {mode === "1" ? "차녀" : "여자"}{" "}
-                      <strong style={{ fontSize: "3rem" }}>보라</strong>
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" ? "한사홍 심재선" : "주경훈"}</strong> 의 {mode === "1" ? "차녀" : "여자"}{" "}
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>보라</strong>
                     </p>
                   </div>
                 </div>
