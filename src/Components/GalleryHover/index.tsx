@@ -35,7 +35,8 @@ const Wrapper = styled.div`
 `;
 
 const StyledSwiper = styled(Swiper)`
-  width: 100%;
+  width: 80vw;
+  height: 80vh;
   background-color: white;
   color: black;
 

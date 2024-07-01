@@ -1,6 +1,5 @@
 // #region Global Imports
-import React, { ChangeEvent } from "react";
-import { useRef, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components";
@@ -23,7 +22,7 @@ const OptionsContainer = styled.div`
   align-items: center;
 `;
 
-const Option = styled.label<{ isCorrect?: boolean; isWrong?: boolean }>`
+const Option = styled.label<{ isSelected?: boolean; isCorrect?: boolean; isWrong?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -38,14 +37,13 @@ const Option = styled.label<{ isCorrect?: boolean; isWrong?: boolean }>`
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
 
-  ${({ isCorrect }) =>
-    isCorrect &&
+  ${({ isSelected }) =>
+    isSelected &&
     css`
-      background-color: blue;
-      border-color: blue;
+      background-color: black;
+      border-color: black;
       color: white;
     `}
-
   ${({ isWrong }) =>
     isWrong &&
     css`
@@ -54,9 +52,15 @@ const Option = styled.label<{ isCorrect?: boolean; isWrong?: boolean }>`
       color: white;
     `}
 
-  &:hover {
-    background-color: #e0e0e0;
-  }
+
+  ${({ isCorrect }) =>
+    isCorrect &&
+    css`
+      background-color: blue;
+      border-color: blue;
+      color: white;
+    `}
+
 
   input {
     display: none;
@@ -187,6 +191,16 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       options: ["발리", "칸쿤", "부산", "화성"],
       answer: "칸쿤",
     },
+    {
+      question: "두 사람의 나이 차이는?",
+      options: ["신랑-1", "신부-1", "신랑+1", "신부+1", "동갑"],
+      answer: "동갑",
+    },
+    {
+      question: "두 사람의 신혼 여행 장소는?",
+      options: ["발리", "칸쿤", "부산", "화성"],
+      answer: "칸쿤",
+    },
     // 질문 추가 가능
   ];
 
@@ -200,6 +214,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const [userAnswers, setUserAnswers] = useState<string[]>([]);
 
   const handleOptionChange = (event) => {
+    console.log("handle option chance", event.target.value);
     setSelectedOption(event.target.value);
   };
 
@@ -207,10 +222,16 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     const updatedUserAnswers = [...userAnswers];
     updatedUserAnswers[currentQuestion] = selectedOption;
     setUserAnswers(updatedUserAnswers);
-
+    console.log("userAnswer", userAnswers);
+    console.log("updatedUserAnswers", updatedUserAnswers);
+    console.log("selectedOption", selectedOption);
     if (selectedOption === questions[currentQuestion].answer) {
+      if (!onceCheck) {
+        setScore(score + 1);
+      }
       setHighlightedOption({ correct: selectedOption });
       setTimeout(() => {
+        console.log("timeout before", userAnswers);
         goToNextQuestion();
       }, 500);
     } else {
@@ -227,26 +248,21 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   };
 
   const goToNextQuestion = () => {
+    console.log("go next user answer", userAnswers);
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
 
     if (nextQuestion < questions.length) {
+      console.log("go next ", currentQuestion, nextQuestion);
       setSelectedOption(userAnswers[nextQuestion] || "");
-      setHighlightedOption({
-        correct: questions[nextQuestion].answer,
-        wrong: userAnswers[nextQuestion] !== questions[nextQuestion].answer ? userAnswers[nextQuestion] : undefined,
-      });
-    } else {
-      let finalScore = 0;
-      for (let i = 0; i < questions.length; i++) {
-        console.log("i ", i, userAnswers[i], questions[i].answer);
-        if (userAnswers[i] === questions[i].answer) {
-          finalScore++;
-        }
+
+      if (onceCheck) {
+        setHighlightedOption({
+          correct: questions[nextQuestion].answer,
+          wrong: userAnswers[nextQuestion] !== questions[nextQuestion].answer ? userAnswers[nextQuestion] : undefined,
+        });
       }
-
-      setScore(finalScore);
-
+    } else {
       setShowScore(true);
       setOnceCheck(true);
     }
@@ -287,6 +303,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     setShowScore(false);
     setUserAnswers([]);
     setHighlightedOption({});
+    setOnceCheck(false);
   };
 
   return (
@@ -361,7 +378,12 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
                                 <QuizTitle>{questions[currentQuestion].question}</QuizTitle>
                                 <OptionsContainer>
                                   {questions[currentQuestion].options.map((option) => (
-                                    <Option key={option} isCorrect={highlightedOption.correct === option} isWrong={highlightedOption.wrong === option}>
+                                    <Option
+                                      key={option}
+                                      isSelected={selectedOption === option}
+                                      isCorrect={highlightedOption.correct === option}
+                                      isWrong={highlightedOption.wrong === option}
+                                    >
                                       <input type="radio" value={option} checked={selectedOption === option} onChange={handleOptionChange} />
                                       <span>{option}</span>
                                     </Option>
