@@ -197,9 +197,9 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       answer: "동갑",
     },
     {
-      question: "두 사람의 신혼 여행 장소는?",
-      options: ["발리", "칸쿤", "부산", "화성"],
-      answer: "칸쿤",
+      question: "두 사람의 만난 햇수는?",
+      options: ["1년", "2년", "3년", "4년"],
+      answer: "2년",
     },
     // 질문 추가 가능
   ];
@@ -222,9 +222,7 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     const updatedUserAnswers = [...userAnswers];
     updatedUserAnswers[currentQuestion] = selectedOption;
     setUserAnswers(updatedUserAnswers);
-    console.log("userAnswer", userAnswers);
-    console.log("updatedUserAnswers", updatedUserAnswers);
-    console.log("selectedOption", selectedOption);
+
     if (selectedOption === questions[currentQuestion].answer) {
       if (!onceCheck) {
         setScore(score + 1);
@@ -248,12 +246,10 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   };
 
   const goToNextQuestion = () => {
-    console.log("go next user answer", userAnswers);
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
 
     if (nextQuestion < questions.length) {
-      console.log("go next ", currentQuestion, nextQuestion);
       setSelectedOption(userAnswers[nextQuestion] || "");
 
       if (onceCheck) {
@@ -271,7 +267,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const goToPreviousQuestion = () => {
     if (currentQuestion > 0 && !onceCheck) {
       const goQuestion = currentQuestion - 1;
-      console.log("currentQuestion", currentQuestion, onceCheck, goQuestion);
 
       setSelectedOption(userAnswers[goQuestion] || "");
       setHighlightedOption({
@@ -282,7 +277,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     }
 
     if (onceCheck) {
-      console.log("currentQuestion onceCheck", currentQuestion, questions.length);
       const goQuestion = currentQuestion - 1;
 
       setSelectedOption(userAnswers[goQuestion] || "");
@@ -367,7 +361,9 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
                             {showScore ? (
                               <ScoreContainer>
                                 <h2>퀴즈 완료!</h2>
-                                <p>당신의 점수는 {score}점 입니다.</p>
+                                <p>
+                                  점수는 {score}/{questions.length}점 입니다.
+                                </p>
                                 <div>
                                   <BackButton onClick={goToPreviousQuestion}>이전</BackButton>
                                   <RestartButton onClick={restartQuiz}>다시 풀기</RestartButton>
