@@ -1,4 +1,13 @@
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+        permanent: true, // true로 설정하면 SEO 친화적 301 리다이렉트를 설정합니다.
+      },
+    ];
+  },
   async headers() {
     return [
       {
