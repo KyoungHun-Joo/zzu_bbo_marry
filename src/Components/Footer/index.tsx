@@ -53,7 +53,6 @@ const Footer: React.FunctionComponent<IFooter.IProps> = ({ setMode }): JSX.Eleme
           </li>
         </ul>
       </div>
-      <div className="foot-logo">it`s card</div>
     </div>
   );
 };
