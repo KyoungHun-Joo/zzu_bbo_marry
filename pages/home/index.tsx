@@ -20,7 +20,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("1");
   const [isServer, setIsServer] = useState(true);
-
+  console.log("ttttttt");
   const removeModal = () => {
     console.log("remove modal call open : ", mode, open);
     if (open) setOpen(false);

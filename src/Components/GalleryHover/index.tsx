@@ -73,6 +73,7 @@ export const GalleryHover = ({ mode, isOpen, setOpen, removeModal }: ModalProps)
       swiper.slidePrev();
     }
   };
+  const prefixGallery = mode == 1 ? "wedding_" : mode == 2 ? "" : "party_";
 
   return createPortal(
     <Wrapper onClick={removeModal}>
@@ -89,40 +90,22 @@ export const GalleryHover = ({ mode, isOpen, setOpen, removeModal }: ModalProps)
         onSwiper={(_swiper) => (swiper = _swiper)}
       >
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery1.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery1.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery1.jpeg?v=1234567890`} />
         </SwiperSlide>
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery2.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery2.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery2.jpeg?v=1234567890`} />
         </SwiperSlide>
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery3.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery3.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery3.jpeg?v=1234567890`} />
         </SwiperSlide>
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery4.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery4.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery4.jpeg?v=1234567890`} />
         </SwiperSlide>
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery5.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery5.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery5.jpeg?v=1234567890`} />
         </SwiperSlide>
         <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
-          <img
-            height="100%"
-            src={mode === "1" ? "/zzu_bbo_marry/static/images/photo/gallery6.jpeg?v=1234567890" : "/zzu_bbo_marry/static/images/photo/party_gallery6.jpeg?v=1234567890"}
-          />
+          <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery6.jpeg?v=1234567890`} />
         </SwiperSlide>
       </StyledSwiper>
     </Wrapper>,

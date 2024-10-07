@@ -28,6 +28,10 @@ app.prepare().then(() => {
     });
   }
 
+  // "/"로 접속 시 "/home"으로 리다이렉트
+  server.get("/", (req, res) => {
+    res.redirect("/home");
+  });
   server.all("*", (req, res) => handler(req, res));
 
   server.listen(port);

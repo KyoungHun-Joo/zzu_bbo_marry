@@ -28,7 +28,7 @@ class WebApp extends App<AppWithStore> {
 
   render() {
     const { Component, pageProps, store } = this.props;
-
+    console.log("in page app");
     return (
       <>
         <ThemeProvider theme={theme}>

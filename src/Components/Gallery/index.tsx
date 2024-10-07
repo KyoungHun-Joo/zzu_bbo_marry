@@ -16,6 +16,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
     // 추가적인 동작이 있다면 여기에 작성
   };
 
+  const prefixGallery = mode == 1 ? "wedding_" : mode == 2 ? "" : "party_";
   return (
     <section className="galleryWrap atm" id="galleryWrap" style={{ paddingBottom: "10%" }}>
       <div className="galleryInner">
@@ -57,7 +58,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery1.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery1.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
@@ -68,7 +69,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery2.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery2.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
@@ -79,7 +80,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery3.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery3.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
@@ -90,7 +91,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery4.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery4.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
@@ -101,7 +102,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery5.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery5.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
@@ -112,7 +113,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                           className="img lazy"
                           style={{
                             display: "block",
-                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${mode === "1" ? "" : "party_"}gallery6.jpeg?v=1234567890)`,
+                            backgroundImage: `url(/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery6.jpeg?v=1234567890)`,
                           }}
                         />
                       </a>
