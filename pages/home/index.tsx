@@ -20,7 +20,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("1");
   const [isServer, setIsServer] = useState(true);
-  console.log("ttttttt");
+
   const removeModal = () => {
     console.log("remove modal call open : ", mode, open);
     if (open) setOpen(false);
@@ -35,18 +35,19 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = () => {
         {mode === "quiz" ? (
           <>
             <Quiz></Quiz>
+            <Footer setMode={setMode} />
           </>
         ) : (
           <>
             <Section2 mode={mode} />
             <Gallery mode={mode} setOpen={setOpen} />
+            <Footer setMode={setMode} />
             <SectionCall />
             <MapSection />
             <GalleryHover mode={mode} isOpen={open} setOpen={setOpen} removeModal={removeModal} />
           </>
         )}
       </>
-      <Footer setMode={setMode} />
     </Container>
   );
 };
