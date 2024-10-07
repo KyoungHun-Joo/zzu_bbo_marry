@@ -16,7 +16,7 @@ export const Section1: React.FunctionComponent<any> = ({ mode }) => {
     <Container
       id="hero"
       className={`${
-        mode === "party" ? "party" : mode == "2" ? "noral" : ""
+        mode === "party" ? "party" : mode == "2" ? "normal" : ""
       } hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white overlay-content`}
     >
       <main id="heroMain">
