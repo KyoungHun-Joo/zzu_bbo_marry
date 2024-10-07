@@ -1700,6 +1700,18 @@ p.form-message.error.form-message.error {
     font-size: 3rem;
   }
 }
+
+.footer_widget .footer_title .call-title {
+  font-size: 2.8rem;
+  color: #38424d;
+}
+@media (max-width: 767px) {
+  .footer_widget .footer_title .call-title {
+    font-size: 2rem;
+  }
+}
+
+
 .footer_widget .footer_title .title span {
   color: #d59a57;
 }
