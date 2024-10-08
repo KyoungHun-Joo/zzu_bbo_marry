@@ -65,11 +65,11 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                           fontSize: "1.7rem",
                           lineHeight: "inherit",
                           color: "dimgrey",
-                          textAlign: "center",
+                          textAlign: "left",
                         }}
                       >
                         {mode === "1" ? (
-                          <i style={{ textAlign: "left"}}>
+                          <i style={{ fontStyle: "normal"}}>
                             <b>한</b>평생을 같이하며 사랑을
                             <br />
                             <b>주</b>고받고 싶은 사람이 생겼습니다
@@ -83,7 +83,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                             <b>훈</b>남훈녀의 앞길을 축복해 주시면 감사하겠습니다
                           </i>
                         ) : mode === "party" ? (
-                          <i>
+                          <i style={{ fontStyle: "normal"}}>
                             내가 그의 이름을 불러 주기 전에는
                             <br />
                             그는 다만 하나의 몸짓에 지나지 않았다.
@@ -109,7 +109,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                             <br />
                           </i>
                         ) : (
-                          <i>
+                          <i style={{ fontStyle: "normal"}}>
                             첫눈에 반해 사랑을 쟁취한 상남자
                             <br />
                             고백은 받았지만 고민하던 철벽녀
