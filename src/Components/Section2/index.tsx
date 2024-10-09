@@ -65,7 +65,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                           fontSize: "1.7rem",
                           lineHeight: "inherit",
                           color: "dimgrey",
-                          textAlign: "center",
+                          textAlign: "left",
                           marginLeft: "10%",
                         }}
                       >
