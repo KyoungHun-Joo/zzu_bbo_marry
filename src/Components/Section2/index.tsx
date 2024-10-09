@@ -66,6 +66,7 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
                           lineHeight: "inherit",
                           color: "dimgrey",
                           textAlign: "center",
+                          marginLeft: "10%",
                         }}
                       >
                         {mode === "1" ? (
