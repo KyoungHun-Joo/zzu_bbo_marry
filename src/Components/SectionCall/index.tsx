@@ -48,7 +48,7 @@ export const SectionCall: React.FunctionComponent<any> = () => {
       <section className="honjuTel-section footer_widget">
         <div className="con footer_title">
           <div className="col">
-            <div className="title">신랑 측 혼주</div>
+            <div className="title call-title">신랑 측 혼주</div>
             <div className="box first">
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>아버지</span>
@@ -65,7 +65,7 @@ export const SectionCall: React.FunctionComponent<any> = () => {
             </div>
           </div>
           <div className="col rightCol">
-            <div className="title ">신부 측 혼주</div>
+            <div className="title call-title">신부 측 혼주</div>
             <div className="box first">
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>아버지</span> <strong style={{ verticalAlign: "middle" }}>한사홍</strong>
