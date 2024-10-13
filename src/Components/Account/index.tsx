@@ -25,16 +25,16 @@ export const Account: React.FunctionComponent<any> = () => {
     if (encodedData) {
       try {
         // Base64 디코딩 및 JSON 파싱
-        const decodedData = JSON.parse(atob(encodedData));
-        console.log("decodedData", decodedData);
-        setAccountData({
-          groom: decodedData.groom || "",
-          bride: decodedData.bride || "",
-          groomFather: decodedData.groomFather || "",
-          groomMother: decodedData.groomMother || "",
-          brideFather: decodedData.brideFather || "",
-          brideMother: decodedData.brideMother || "",
-        });
+        // const decodedData = JSON.parse(atob(encodedData));
+        // console.log("decodedData", decodedData);
+        // setAccountData({
+        //   groom: decodedData.groom || "",
+        //   bride: decodedData.bride || "",
+        //   groomFather: decodedData.groomFather || "",
+        //   groomMother: decodedData.groomMother || "",
+        //   brideFather: decodedData.brideFather || "",
+        //   brideMother: decodedData.brideMother || "",
+        // });
       } catch (err) {
         console.error("데이터 복호화에 실패했습니다.", err);
       }
@@ -131,7 +131,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     </div>
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
-                        <button className="accountbtn gift-one-button" id="groom1" onClick={() => copyToClipboard(accountData.groomFather)}>
+                        <button className="accountbtn gift-one-button" id="groom1" onClick={() => copyToClipboard("우리 " + accountData.groomFather)}>
                           <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>

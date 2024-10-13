@@ -1,7 +1,6 @@
 // #region Global Imports
 import React from "react";
 import styled from "styled-components";
-import { useRef, useState } from "react";
 
 // #endregion Global Imports
 // imageUrl='/images/floral-leaf/floral-leaf-1.png'
@@ -12,6 +11,9 @@ import { useRef, useState } from "react";
 const Container = styled.section<any>``;
 
 export const Section1: React.FunctionComponent<any> = ({ mode }) => {
+  // party 모드일 때 색상을 #d1d1d1로 설정하고, 그 외에는 기본 색상을 사용
+  const textColor = mode === "party" ? "#d1d1d1" : "#273038";
+
   return (
     <Container
       id="hero"
@@ -20,10 +22,10 @@ export const Section1: React.FunctionComponent<any> = ({ mode }) => {
       } hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white overlay-content`}
     >
       <main id="heroMain">
-        <h4 style={{ color: "#d1d1d1" }}>우 리 결 혼 합 니 다</h4>
-        <h1 style={{ color: "#d1d1d1" }}>주경훈 & 한보라</h1>
-        <p style={{ color: "#273038" }}>2024. 12. 7. (토) 오후 3:30</p>
-        <p style={{ color: "#273038" }}>아펠가모 반포 웨딩홀</p>
+        <h4 style={{ color: textColor }}>우 리 결 혼 합 니 다</h4>
+        <h1 style={{ color: textColor }}>주경훈 & 한보라</h1>
+        <p style={{ color: textColor }}>2024. 12. 7. (토) 오후 3:30</p>
+        <p style={{ color: textColor }}>아펠가모 반포 웨딩홀</p>
         <div className="simply-countdown" />
         <div className="simply-countdown" />
         <div className="simply-countdown" />
