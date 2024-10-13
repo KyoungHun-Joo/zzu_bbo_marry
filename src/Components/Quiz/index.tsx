@@ -157,7 +157,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const router = useRouter();
   const { query } = router;
 
-  console.log("quiz load");
   const handleSecret = async () => {
     if (!("secret" in query)) return;
     const res = await fetch(`https://zzubbomarry.s3.ap-northeast-2.amazonaws.com/${query.secret}.mp4`, {
@@ -168,10 +167,8 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
     });
 
     if (res.status == 200) {
-      console.log(" is valid ");
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setIsValid(true);
-      console.log("test1");
       const Video = dynamic(() => import("../Video").then((mod) => mod.Video), {
         ssr: false, // 서버사이드 렌더링 시 동적 로딩 비활성화
       });
@@ -192,11 +189,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       answer: "칸쿤",
     },
     {
-      question: "두 사람의 나이 차이는?",
-      options: ["신랑-1", "신부-1", "신랑+1", "신부+1", "동갑"],
-      answer: "동갑",
-    },
-    {
       question: "두 사람의 만난 햇수는?",
       options: ["1년", "2년", "3년", "4년"],
       answer: "2년",
@@ -214,7 +206,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
   const [userAnswers, setUserAnswers] = useState<string[]>([]);
 
   const handleOptionChange = (event) => {
-    console.log("handle option chance", event.target.value);
     setSelectedOption(event.target.value);
   };
 
@@ -229,7 +220,6 @@ export const Quiz: React.FunctionComponent<any> = ({ mode }) => {
       }
       setHighlightedOption({ correct: selectedOption });
       setTimeout(() => {
-        console.log("timeout before", userAnswers);
         goToNextQuestion();
       }, 500);
     } else {
