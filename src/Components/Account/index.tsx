@@ -126,7 +126,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="accountinfo">
                       <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>혼주</small>&nbsp;<b>주창선</b>
-                        <span className="right-float">{accountData.groomFather}</span>
+                        <span className="right-float">우리 {accountData.groomFather}</span>
                       </p>
                     </div>
                     <div className="btnouter">

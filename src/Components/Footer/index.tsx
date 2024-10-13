@@ -36,11 +36,11 @@ const Footer: React.FunctionComponent<IFooter.IProps> = ({ setMode }): JSX.Eleme
               웨딩 모드
             </a>
           </li>
-          <li onClick={() => modeHandler("2")}>
+          {/* <li onClick={() => modeHandler("2")}>
             <a href="#" className="normal">
               일반 모드
             </a>
-          </li>
+          </li> */}
           <li onClick={() => modeHandler("party")}>
             <a href="#" className="party">
               파티 모드

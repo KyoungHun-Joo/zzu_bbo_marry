@@ -40,7 +40,9 @@ export const SectionCall: React.FunctionComponent<any> = () => {
             <br />
             <h5 className="title">
               신부한테 연락하기
-              <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+              <a href="tel:01041104793">
+                <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+              </a>
             </h5>
           </div>
         </div>
@@ -53,14 +55,18 @@ export const SectionCall: React.FunctionComponent<any> = () => {
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>아버지</span>
                 <strong style={{ verticalAlign: "middle" }}>주창선</strong>
-                <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                <a href="tel:01042636650">
+                  <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                </a>
               </div>
             </div>
             <div className="box">
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>어머니</span>
                 <strong style={{ verticalAlign: "middle" }}>이화실</strong>
-                <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                <a href="tel:01087157089">
+                  <img className="com-btn tel sl" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                </a>
               </div>
             </div>
           </div>
@@ -69,13 +75,17 @@ export const SectionCall: React.FunctionComponent<any> = () => {
             <div className="box first">
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>아버지</span> <strong style={{ verticalAlign: "middle" }}>한사홍</strong>
-                <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                <a href="tel:01052179316">
+                  <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                </a>
               </div>
             </div>
             <div className="box">
               <div className="name">
                 <span style={{ verticalAlign: "middle" }}>어머니</span> <strong style={{ verticalAlign: "middle" }}>심재선</strong>
-                <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                <a href="tel:01045414793">
+                  <img className="com-btn tel sb" src="/zzu_bbo_marry/static/images/icon_tel.png" alt="shape" />
+                </a>
               </div>
             </div>
           </div>
