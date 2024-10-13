@@ -91,15 +91,20 @@ export const Account: React.FunctionComponent<any> = () => {
           <div className="col-md-6" style={{ margin: "0 auto;", marginBottom: "20px" }} id="groom-account">
             <div className="panel panel-default" style={{ border: "none" }}>
               <div role="tab" id="headingGroom">
-                <button className="accordion3 accordion-toggle collapsed" aria-expanded={isGroomOpen} onClick={handleGroomToggle}>
-                  <i className="de-icon-pagelines"></i>&nbsp;신랑측
+                <button
+                  className={isGroomOpen ? "accordion3 accordion-toggle icon-down-open" : "accordion3 accordion-toggle icon-down-open collapsed"}
+                  aria-expanded={isGroomOpen}
+                  onClick={handleGroomToggle}
+                >
+                  {/* 아이콘을 동적으로 변경 */}
+                  <i className="icon-pagelines"></i>&nbsp;신랑측
                 </button>
               </div>
               <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen}>
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>신랑</small>&nbsp;<b>주경훈</b>
                         <span className="right-float">국민 {accountData.groom}</span>
                       </p>
@@ -107,7 +112,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="groom1" onClick={() => copyToClipboard("국민 " + accountData.groom)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>
@@ -119,7 +124,7 @@ export const Account: React.FunctionComponent<any> = () => {
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>혼주</small>&nbsp;<b>주창선</b>
                         <span className="right-float">{accountData.groomFather}</span>
                       </p>
@@ -127,7 +132,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="groom1" onClick={() => copyToClipboard(accountData.groomFather)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>
@@ -139,7 +144,7 @@ export const Account: React.FunctionComponent<any> = () => {
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>혼주</small>&nbsp;<b>이화실</b>
                         <span className="right-float">우리 {accountData.groomMother}</span>
                       </p>
@@ -147,7 +152,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="groom1" onClick={() => copyToClipboard("우리 " + accountData.groomMother)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>
@@ -162,23 +167,27 @@ export const Account: React.FunctionComponent<any> = () => {
           <div className="col-md-6" style={{ margin: "0 auto;" }} id="bride-account">
             <div className="panel panel-default" style={{ border: "none" }}>
               <div role="tab" id="headingBride">
-                <button className="accordion4 accordion-toggle collapsed" aria-expanded={isBrideOpen} onClick={handleBrideToggle}>
-                  <i className="de-icon-pagelines"></i>&nbsp;신부측
+                <button
+                  className={isBrideOpen ? "accordion4 accordion-toggle icon-down-open" : "accordion4 accordion-toggle icon-down-open collapsed"}
+                  aria-expanded={isBrideOpen}
+                  onClick={handleBrideToggle}
+                >
+                  <i className="icon-pagelines"></i>&nbsp;신부측
                 </button>
               </div>
               <div style={{ display: isBrideOpen ? "block" : "none" }} aria-expanded={isBrideOpen}>
                 <div className="panel2">
                   <div className="gift-bride">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
-                        <small style={{ textAlign: "left", fontWeight: "600" }}>신부</small>&nbsp;<b>한보라</b>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
+                        <small>신부</small>&nbsp;<b>한보라</b>
                         <span className="right-float">우리 {accountData.bride}</span>
                       </p>
                     </div>
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="bride1" onClick={() => copyToClipboard("우리 " + accountData.bride)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>
@@ -188,7 +197,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   <hr className="line-bride" />
                   <div className="gift-bride parent father">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>혼주</small>&nbsp;<b>한사홍</b>
                         <span className="right-float">신한 {accountData.brideFather}</span>
                       </p>
@@ -196,7 +205,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="bride2" onClick={() => copyToClipboard("신한 " + accountData.brideFather)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>
@@ -206,7 +215,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   <hr className="line-bride" />
                   <div className="gift-bride parent mother">
                     <div className="accountinfo">
-                      <p className="lead" style={{ textAlign: "left", fontWeight: "600" }}>
+                      <p className="lead" style={{ textAlign: "left", fontWeight: "1000" }}>
                         <small>혼주</small>&nbsp;<b>심재선</b>
                         <span className="right-float">신한 {accountData.brideMother}</span>
                       </p>
@@ -214,7 +223,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     <div className="btnouter">
                       <div className="btninner accountbtn-wrapper">
                         <button className="accountbtn gift-one-button" id="bride3" onClick={() => copyToClipboard("신한 " + accountData.brideMother)}>
-                          <i className="de-icon-doc-text" style={{ margin: "0px 2px" }}></i>
+                          <i className="icon-doc-text" style={{ margin: "0px 2px" }}></i>
                           계좌번호 복사
                         </button>
                       </div>

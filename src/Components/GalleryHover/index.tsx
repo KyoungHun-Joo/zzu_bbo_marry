@@ -89,33 +89,33 @@ export const GalleryHover = ({ mode, isOpen, setOpen, removeModal }: ModalProps)
         //onSlideChange={() => console.log("slide change2")}
         onSwiper={(_swiper) => (swiper = _swiper)}
       >
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery1.jpeg?v=1234567890`} />
         </SwiperSlide>
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery2.jpeg?v=1234567890`} />
         </SwiperSlide>
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery3.jpeg?v=1234567890`} />
         </SwiperSlide>
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery4.jpeg?v=1234567890`} />
         </SwiperSlide>
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery5.jpeg?v=1234567890`} />
         </SwiperSlide>
-        <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+        <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
           <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery6.jpeg?v=1234567890`} />
         </SwiperSlide>
         {mode === "1" ? (
           <>
-            <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+            <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
               <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery7.jpeg?v=1234567890`} />
             </SwiperSlide>
-            <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+            <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
               <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery8.jpeg?v=1234567890`} />
             </SwiperSlide>
-            <SwiperSlide style={{ padding: "5%" }} className="slide-item" onClick={handleSlideClick}>
+            <SwiperSlide style={{ padding: "1%" }} className="slide-item" onClick={handleSlideClick}>
               <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery9.jpeg?v=1234567890`} />
             </SwiperSlide>
           </>
