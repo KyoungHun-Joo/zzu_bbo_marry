@@ -122,6 +122,30 @@ export const GalleryHover = ({ mode, isOpen, setOpen, removeModal }: ModalProps)
         ) : (
           <></>
         )}
+        {mode === "party" ? (
+          <>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery7.jpeg?v=1234567890`} />
+            </SwiperSlide>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery8.jpeg?v=1234567890`} />
+            </SwiperSlide>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery9.jpeg?v=1234567890`} />
+            </SwiperSlide>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery10.jpeg?v=1234567890`} />
+            </SwiperSlide>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery11.jpeg?v=1234567890`} />
+            </SwiperSlide>
+            <SwiperSlide style={{}} className="slide-item" onClick={handleSlideClick}>
+              <img height="100%" src={`/zzu_bbo_marry/static/images/photo/${prefixGallery}gallery12.jpeg?v=1234567890`} />
+            </SwiperSlide>
+          </>
+        ) : (
+          <></>
+        )}
       </StyledSwiper>
     </Wrapper>,
     document.getElementById("modal-root") as HTMLDivElement
