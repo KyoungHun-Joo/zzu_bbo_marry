@@ -135,11 +135,11 @@ export const Section2: React.FunctionComponent<any> = ({ mode }) => {
 
                     <p className="text">
                       <br />
-                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" || mode === "2" ? "주창선 이화실" : "한보라"}</strong> 의{" "}
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" || mode === "2" ? "주창선 · 이화실" : "한보라"}</strong> 의{" "}
                       {mode === "1" || mode === "2" ? "장남" : "남자"} <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>경훈</strong>
                       <br />
                       <br />
-                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" || mode === "2" ? "한사홍 심재선" : "주경훈"}</strong> 의{" "}
+                      <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>{mode === "1" || mode === "2" ? "한사홍 · 심재선" : "주경훈"}</strong> 의{" "}
                       {mode === "1" || mode === "2" ? "차녀" : "여자"} <strong style={{ fontSize: "3rem", verticalAlign: "middle" }}>보라</strong>
                     </p>
                   </div>
