@@ -13,8 +13,11 @@
 @import "./account.scss";
 
 @import "https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap";
+@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700;800&amp;display=swap";
 
 body {
+  font-family: "Dancing Script", sans-serif;
+
   width: 100%;
   font-size: 1.2rem;
   overflow-x: hidden;
@@ -25,6 +28,17 @@ body {
   font-size: 6rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 700;
+  color: #38424d;
+  margin: 0;
+}
 .com-btn {
   display: inline-block;
   vertical-align: middle;

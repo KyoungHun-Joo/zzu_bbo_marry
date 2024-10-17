@@ -1,17 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Niconne|Poppins:300,400,500,600,700,800&display=swap";
-body {
-  font-family: poppins, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #747e88;
-}
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+
 img {
   max-width: 100%;
 }
@@ -39,17 +27,7 @@ svg,
 video {
   vertical-align: middle;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 700;
-  color: #38424d;
-  margin: 0;
-}
+
 h1 {
   font-size: 48px;
 }
@@ -1710,7 +1688,6 @@ p.form-message.error.form-message.error {
     font-size: 2rem;
   }
 }
-
 
 .footer_widget .footer_title .title span {
   color: #d59a57;
