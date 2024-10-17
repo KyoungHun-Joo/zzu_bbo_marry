@@ -12,7 +12,25 @@
 
 @import "./account.scss";
 
+@import "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700;800&amp;display=swap";
+
+@import "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&amp;display=swap";
+@import "https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;700;800&amp;display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lora:wght@400;700;800&amp;display=swap";
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&amp;display=swap";
 @import "https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap";
+
+body {
+  width: 100%;
+  font-size: 1.2rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.hero h1 {
+  font-size: 6rem;
+}
+
 .com-btn {
   display: inline-block;
   vertical-align: middle;
@@ -68,14 +86,6 @@
   --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-body {
-  width: 100%;
-  font-size: 1.2rem;
-  font-family: "Work Sans", sans-serif;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
 .sosmed {
   display: inline;
 }
@@ -124,9 +134,11 @@ body {
 .hero.party::before {
   background-image: url("/zzu_bbo_marry/static/images/party/banner1.jpeg") !important;
 }
+
 .heroMain {
   position: relative;
   min-height: 100vh;
+  margin-bottom: 15%;
 }
 
 .hero {
@@ -140,17 +152,12 @@ body {
   text-shadow: var(--shadow);
 }
 
-.hero h1 {
-  font-family: "Sacramento", cursive;
-  font-size: 6rem;
-}
-
 .hero h4 {
   font-size: 1.4rem;
 }
 
 .hero p {
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 .hero a {
