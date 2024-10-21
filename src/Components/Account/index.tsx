@@ -100,7 +100,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   <i className="icon-pagelines"></i>&nbsp;신랑측
                 </button>
               </div>
-              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen}>
+              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen && accountData.groom != ''}>
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
@@ -120,7 +120,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen}>
+              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen  && accountData.groomFather != ''}>
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
@@ -140,7 +140,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen}>
+              <div style={{ display: isGroomOpen ? "block" : "none" }} aria-expanded={isGroomOpen && accountData.groomMother != ''}>
                 <div className="panel1">
                   <div className="gift-groom">
                     <div className="accountinfo">
@@ -175,7 +175,7 @@ export const Account: React.FunctionComponent<any> = () => {
                   <i className="icon-pagelines"></i>&nbsp;신부측
                 </button>
               </div>
-              <div style={{ display: isBrideOpen ? "block" : "none" }} aria-expanded={isBrideOpen}>
+              <div style={{ display: isBrideOpen ? "block" : "none" }} aria-expanded={isBrideOpen  && accountData.bride != ''}>
                 <div className="panel2">
                   <div className="gift-bride">
                     <div className="accountinfo">
@@ -193,6 +193,9 @@ export const Account: React.FunctionComponent<any> = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+              <div style={{ display: isBrideOpen ? "block" : "none" }} aria-expanded={isBrideOpen  && accountData.brideFather != ''}>
+                <div className="panel2">
 
                   <hr className="line-bride" />
                   <div className="gift-bride parent father">
@@ -211,7 +214,10 @@ export const Account: React.FunctionComponent<any> = () => {
                       </div>
                     </div>
                   </div>
-
+                  </div>
+                </div>
+              <div style={{ display: isBrideOpen ? "block" : "none" }} aria-expanded={isBrideOpen  && accountData.brideMother != ''}>
+                <div className="panel2">
                   <hr className="line-bride" />
                   <div className="gift-bride parent mother">
                     <div className="accountinfo">
@@ -229,6 +235,8 @@ export const Account: React.FunctionComponent<any> = () => {
                       </div>
                     </div>
                   </div>
+                                    </div>
+                </div>
                 </div>
               </div>
             </div>
