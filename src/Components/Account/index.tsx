@@ -195,6 +195,7 @@ export const Account: React.FunctionComponent<any> = () => {
                     </div>
                   </div>
                 </div>
+              </div>
               <div style={{ display: (isBrideOpen && accountData.brideFather != '') ? "block" : "none" }} aria-expanded={isBrideOpen}>
                 <div className="panel2">
 
@@ -215,8 +216,8 @@ export const Account: React.FunctionComponent<any> = () => {
                       </div>
                     </div>
                   </div>
-                  </div>
                 </div>
+              </div>
               <div style={{ display: (isBrideOpen && accountData.brideMother != '') ? "block" : "none" }} aria-expanded={isBrideOpen}>
                 <div className="panel2">
                   <hr className="line-bride" />
@@ -237,7 +238,6 @@ export const Account: React.FunctionComponent<any> = () => {
                     </div>
                   </div>
 
-                </div>
                 </div>
               </div>
             </div>
