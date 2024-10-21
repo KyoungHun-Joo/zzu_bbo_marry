@@ -235,7 +235,7 @@ export const Account: React.FunctionComponent<any> = () => {
                       </div>
                     </div>
                   </div>
-                                    </div>
+
                 </div>
                 </div>
               </div>
