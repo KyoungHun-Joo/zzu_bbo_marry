@@ -1,4 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Niconne|Poppins:300,400,500,600,700,800&display=swap";
+html {
+    max-width: 766px;
+    margin: 0 auto;
+}
 
 img {
   max-width: 100%;
@@ -1675,7 +1679,7 @@ p.form-message.error.form-message.error {
 }
 @media (max-width: 767px) {
   .footer_widget .footer_title .title {
-    font-size: 3rem;
+    font-size: 36px;
   }
 }
 
