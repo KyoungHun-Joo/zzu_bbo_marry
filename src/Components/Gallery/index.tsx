@@ -121,7 +121,7 @@ export const Gallery: React.FunctionComponent<any> = ({ mode, setOpen }) => {
                   </ul>
                 </div>
 
-                <div className="col-lg-9" onClick={handleClick}>
+                <div onClick={handleClick}>
                   <div className="section_title text-center greeting-section">
                     <p className="text" style={{ margin: "0px" }}>
                       <br />
