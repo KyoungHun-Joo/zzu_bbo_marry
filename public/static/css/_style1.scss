@@ -1,7 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Niconne|Poppins:300,400,500,600,700,800&display=swap";
 html {
-    max-width: 766px;
-    margin: 0 auto;
+  max-width: 766px;
+  margin: 0 auto;
 }
 
 img {
@@ -1077,6 +1077,7 @@ p {
   box-shadow: 0 3px 50px 0 rgba(177, 177, 177, 0.3);
 }
 .coming_soon_area {
+  text-align: -webkit-center;
   width: 100%;
   background-color: #fcf4ec;
   position: relative;
